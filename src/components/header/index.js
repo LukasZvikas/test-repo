@@ -2,7 +2,7 @@ import React from 'react';
 import './header.css';
 
 const Header = () => (
-  <div className="navigation">
+  <div className="navigation bg-info text-white">
     <div className="navigation__logo">
       <h2>My Posts App</h2>
     </div>

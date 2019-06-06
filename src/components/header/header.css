@@ -7,7 +7,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: papayawhip;
   padding: 2rem;
   z-index: 1000;
 }
