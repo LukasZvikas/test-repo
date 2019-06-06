@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Post from './components/post';
 import Header from './components/header';
+import CommentForm from './components/commentForm';
+import PostContext from './components/postContext';
 import './App.css';
 
 class App extends Component {
@@ -15,9 +17,11 @@ class App extends Component {
     this.setState({ posts });
   }
 
-  // eslint-disable-next-line class-methods-use-this
+  setNewPostState(newPostState) {
+    this.setState({ posts: newPostState });
+  }
+
   renderPosts(posts) {
-    // eslint-disable-next-line object-curly-newline
     return posts.map(({ userId, id, title, body }) => (
       <Post key={id} userId={userId} id={id} title={title} body={body} />
     ));
@@ -26,8 +30,18 @@ class App extends Component {
   render() {
     const { posts } = this.state;
     return posts ? (
-      <div className="App" style={{ marginTop: '70px' }}>
+      <div className="App" style={{ marginTop: '100px' }}>
         <Header />
+        <PostContext.Provider
+          value={{
+            posts,
+          }}
+        >
+          <CommentForm
+            lastId={posts.length - 1}
+            setNewPostState={newPostState => this.setNewPostState(newPostState)}
+          />
+        </PostContext.Provider>
         <div className="row d-flex justify-content-center">
           {this.renderPosts(posts)}
         </div>
