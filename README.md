@@ -1,68 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Test Answers
 
-## Available Scripts
+1.	The main difference between const and let is that let can be reassigned and const can’t. You can change properties in an object that is defined using const, however, you cannot reassign it to a new object.
+2.	For-of is usually used to loop through arrays or strings and for-in is used to iterate through object properties such as keys. For-in can also be used to retrieve indexes from the array or string.
+3.	In order to check if an item exists in array I would use ES6 property “.includes()”. However, there are multiple ways to do it, such as looping through array and looking if an item is equal to green or using indexOf.
 
-In the project directory, you can run:
+4.	
+```
+const truncWords = (arr, num) => {
+return arr.split(' ').slice(0, num);
+} ;
+```
 
-### `npm start`
+5.	
+```
+const convertArrToObj = (arr) => {
+  return arr.reduce((acc, item, index) => {
+    const itemArr = item.split(' ');
+    const isPencil = itemArr[1].split('_');
+    if (isPencil[1] === 'pencil')
+      acc.push({
+        item: itemArr[1],
+        code: itemArr[2],
+        amount: itemArr[3]
+      });
+    return acc;
+  }, [])
+};
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+const formatInventory = (arr) => {
+  const formatItems = convertArrToObj(arr);
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+  return {
+    'Inventory': formatItems
+  };
 
-### `npm test`
+};
+```
+# Coding Challenge
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## To run the application
 
-### `npm run build`
+1. Clone the repository
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. run ``` npm install ```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+3. run ``` npm run start ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
