@@ -4,7 +4,7 @@ import './header.css';
 const Header = () => (
   <div className="navigation">
     <div className="navigation__logo">
-      <h2>Posty</h2>
+      <h2>My Posts App</h2>
     </div>
     <nav className="navigation__links">
       <ul>

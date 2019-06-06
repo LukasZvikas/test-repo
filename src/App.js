@@ -22,7 +22,9 @@ class App extends Component {
   }
 
   renderPosts(posts) {
-    return posts.map(({ userId, id, title, body }) => (
+    return posts.map(({
+      userId, id, title, body,
+    }) => (
       <Post key={id} userId={userId} id={id} title={title} body={body} />
     ));
   }
@@ -32,6 +34,7 @@ class App extends Component {
     return posts ? (
       <div className="App" style={{ marginTop: '100px' }}>
         <Header />
+        <h2>My Posts App</h2>
         <PostContext.Provider
           value={{
             posts,
