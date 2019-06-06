@@ -7,7 +7,7 @@
 4.	
 ```
 const truncWords = (arr, num) => {
-return arr.split(' ').slice(0, num);
+  return arr.split(' ').slice(0, num);
 } ;
 ```
 
