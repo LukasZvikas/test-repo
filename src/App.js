@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Post from './components/post';
+import Header from './components/header';
 import './App.css';
 
 class App extends Component {
@@ -18,15 +19,15 @@ class App extends Component {
   renderPosts(posts) {
     // eslint-disable-next-line object-curly-newline
     return posts.map(({ userId, id, title, body }) => (
-      <Post userId={userId} id={id} title={title} body={body} />
+      <Post key={id} userId={userId} id={id} title={title} body={body} />
     ));
   }
 
   render() {
     const { posts } = this.state;
     return posts ? (
-      <div className="App">
-        <div>This is app</div>
+      <div className="App" style={{ marginTop: '70px' }}>
+        <Header />
         <div className="row d-flex justify-content-center">
           {this.renderPosts(posts)}
         </div>

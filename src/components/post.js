@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Post = ({ userId, id, title, body }) => {
   console.log(userId, id);
   return (
-    <div className="card col-4 col-sm-3 col-md-5 m-4 p-4">
+    <div className="card col-10 col-sm-5 col-md-3 m-4 p-4">
       <h4 className="mb-2">{title}</h4>
       <div>{body}</div>
     </div>
@@ -13,8 +13,8 @@ const Post = ({ userId, id, title, body }) => {
 };
 
 Post.propTypes = {
-  userId: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  userId: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
 };
